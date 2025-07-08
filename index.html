@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI RC Car - 자율주행 RC카 프로젝트</title>
+    <meta name="description" content="AI 기술을 활용한 자율주행 RC카 프로젝트입니다. 컴퓨터 비전과 머신러닝을 통해 스스로 주행하는 RC카를 개발했습니다.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car"></i>
+                <span>AI RC Car</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">홈</a></li>
+                <li><a href="#about">프로젝트</a></li>
+                <li><a href="#features">기능</a></li>
+                <li><a href="#demo">데모</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">AI RC Car</span>
+                    <br>자율주행의 미래
+                </h1>
+                <p class="hero-description">
+                    컴퓨터 비전과 머신러닝 기술을 활용하여 스스로 주행하는 RC카를 개발했습니다.
+                    장애물 회피, 경로 탐색, 자동 주차까지 모든 것이 가능합니다.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        데모 보기
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        자세히 보기
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="car-animation">
+                    <i class="fas fa-car-side"></i>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">프로젝트 소개</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>AI 기술로 구현한 자율주행 RC카</h3>
+                    <p>
+                        이 프로젝트는 Raspberry Pi와 Arduino를 기반으로 한 자율주행 RC카입니다.
+                        컴퓨터 비전 기술을 통해 실시간으로 주변 환경을 인식하고,
+                        딥러닝 모델을 활용하여 최적의 주행 경로를 결정합니다.
+                    </p>
+                    <div class="tech-stack">
+                        <h4>사용 기술</h4>
+                        <div class="tech-items">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">OpenCV</span>
+                            <span class="tech-item">TensorFlow</span>
+                            <span class="tech-item">Raspberry Pi</span>
+                            <span class="tech-item">Arduino</span>
+                            <span class="tech-item">ROS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-robot"></i>
+                        <p>RC Car 이미지</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">주요 기능</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>컴퓨터 비전</h3>
+                    <p>카메라를 통해 실시간으로 주변 환경을 인식하고 장애물을 탐지합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>머신러닝</h3>
+                    <p>딥러닝 모델을 활용하여 최적의 주행 경로를 학습하고 결정합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>경로 계획</h3>
+                    <p>SLAM 알고리즘을 통해 지도를 생성하고 효율적인 경로를 계획합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>안전 시스템</h3>
+                    <p>비상 정지 기능과 충돌 방지 시스템으로 안전한 주행을 보장합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>원격 제어</h3>
+                    <p>스마트폰 앱을 통해 원격으로 RC카를 제어하고 모니터링할 수 있습니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>실시간 모니터링</h3>
+                    <p>주행 데이터와 센서 정보를 실시간으로 수집하고 분석합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">데모 영상</h2>
+            <div class="demo-content">
+                <div class="demo-video">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>데모 영상이 여기에 표시됩니다</p>
+                    </div>
+                </div>
+                <div class="demo-description">
+                    <h3>실제 주행 모습</h3>
+                    <p>
+                        다양한 환경에서의 자율주행 테스트 영상을 확인할 수 있습니다.
+                        장애물 회피, 자동 주차, 경로 탐색 등 모든 기능이 실제로 작동하는 모습을 보여줍니다.
+                    </p>
+                    <div class="demo-stats">
+                        <div class="stat">
+                            <span class="stat-number">99%</span>
+                            <span class="stat-label">정확도</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5m/s</span>
+                            <span class="stat-label">최고 속도</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2시간</span>
+                            <span class="stat-label">주행 시간</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">연락처</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>프로젝트에 관심이 있으신가요?</h3>
+                    <p>
+                        이 프로젝트에 대한 질문이나 협업 제안이 있으시면 언제든 연락주세요.
+                        GitHub, LinkedIn, 이메일을 통해 소통할 수 있습니다.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                        <a href="mailto:your.email@example.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="이름" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="이메일" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="메시지" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">메시지 보내기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-car"></i>
+                    <span>AI RC Car</span>
+                </div>
+                <p>&copy; 2024 AI RC Car Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
