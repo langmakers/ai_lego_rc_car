@@ -82,17 +82,17 @@ if (contactForm) {
         
         // Simple validation
         if (!name || !email || !message) {
-            showNotification('모든 필드를 입력해주세요.', 'error');
+            showNotification('Please fill in all fields.', 'error');
             return;
         }
         
         if (!isValidEmail(email)) {
-            showNotification('올바른 이메일 주소를 입력해주세요.', 'error');
+            showNotification('Please enter a valid email address.', 'error');
             return;
         }
         
         // Simulate form submission
-        showNotification('메시지가 성공적으로 전송되었습니다!', 'success');
+        showNotification('Message sent successfully!', 'success');
         contactForm.reset();
     });
 }
@@ -171,12 +171,21 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Video placeholder click handler
-const videoPlaceholder = document.querySelector('.video-placeholder');
-if (videoPlaceholder) {
-    videoPlaceholder.addEventListener('click', () => {
-        showNotification('데모 영상이 준비 중입니다. 곧 업로드될 예정입니다!', 'info');
-    });
+// Video container enhancement
+const videoContainer = document.querySelector('.video-container');
+if (videoContainer) {
+    // Add loading state
+    const iframe = videoContainer.querySelector('iframe');
+    if (iframe) {
+        iframe.addEventListener('load', () => {
+            videoContainer.style.opacity = '1';
+        });
+        
+        // Add error handling
+        iframe.addEventListener('error', () => {
+            showNotification('Video failed to load. Please try again later.', 'error');
+        });
+    }
 }
 
 // Parallax effect for hero section
@@ -306,7 +315,7 @@ progressBar.style.cssText = `
     left: 0;
     width: 0%;
     height: 3px;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    background: linear-gradient(45deg, #22c55e, #16a34a);
     z-index: 10001;
     transition: width 0.1s ease;
 `;
@@ -315,4 +324,81 @@ document.body.appendChild(progressBar);
 window.addEventListener('scroll', () => {
     const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     progressBar.style.width = scrolled + '%';
-}); 
+});
+
+// Mobile-specific enhancements
+document.addEventListener('DOMContentLoaded', () => {
+    // Prevent zoom on input focus for iOS
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            if (window.innerWidth <= 768) {
+                input.style.fontSize = '16px';
+            }
+        });
+    });
+    
+    // Add touch feedback for mobile
+    const touchElements = document.querySelectorAll('.btn, .social-link, .feature-card, .video-placeholder, .video-container');
+    touchElements.forEach(element => {
+        element.addEventListener('touchstart', () => {
+            element.style.transform = 'scale(0.98)';
+        });
+        
+        element.addEventListener('touchend', () => {
+            element.style.transform = '';
+        });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar') && navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+    
+    // Add swipe gesture for mobile menu (optional)
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    document.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    document.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0 && navMenu.classList.contains('active')) {
+                // Swipe left - close menu
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            } else if (diff < 0 && !navMenu.classList.contains('active')) {
+                // Swipe right - open menu
+                hamburger.classList.add('active');
+                navMenu.classList.add('active');
+            }
+        }
+    }
+});
+
+// Optimize performance for mobile
+let ticking = false;
+function updateOnScroll() {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            // Update scroll-based animations here
+            ticking = false;
+        });
+        ticking = true;
+    }
+}
+
+window.addEventListener('scroll', updateOnScroll, { passive: true }); 
