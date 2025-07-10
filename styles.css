@@ -18,6 +18,68 @@ body {
     padding: 0 20px;
 }
 
+/* Compact Layout Tweaks */
+section, .milestones {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+}
+.container {
+    max-width: 1100px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+.about-content, .features-grid, .demo-content, .contact-content {
+    gap: 2rem !important;
+}
+.feature-card, .contact-form, .milestone-list li {
+    padding: 1.2rem 1rem 0.7rem 1.2rem !important;
+}
+.feature-card h3, .milestone-list li strong, .contact-info h3, .demo-description h3 {
+    font-size: 1.05rem !important;
+}
+.feature-card p, .milestone-list ul li, .about-text p, .demo-description p, .contact-info p {
+    font-size: 0.97rem !important;
+}
+.btn {
+    padding: 0.7rem 1.2rem !important;
+    font-size: 0.97rem !important;
+}
+.form-group {
+    margin-bottom: 1rem !important;
+}
+.form-group input, .form-group textarea {
+    padding: 0.7rem !important;
+    font-size: 0.97rem !important;
+}
+.milestone-list li {
+    margin-bottom: 1.2rem !important;
+}
+.milestone-list ul {
+    margin-top: 0.4rem !important;
+    padding-left: 1rem !important;
+}
+.navbar {
+    padding: 0.5rem 0 !important;
+}
+.nav-menu {
+    gap: 1.2rem !important;
+}
+.hero-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 1rem !important;
+}
+.hero-description {
+    font-size: 1.05rem !important;
+    margin-bottom: 1.2rem !important;
+}
+.hero-buttons {
+    gap: 0.7rem !important;
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -120,6 +182,22 @@ body {
     opacity: 0.3;
 }
 
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.22;
+    background: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7" fill="%23facc15"/><circle cx="50" cy="10" r="7" fill="%23ef4444"/><circle cx="10" cy="50" r="7" fill="%233b82f6"/><circle cx="50" cy="50" r="7" fill="%2316a34a"/><circle cx="30" cy="30" r="7" fill="%23e5e7eb"/></svg>');
+    background-size: 60px 60px;
+    background-repeat: repeat;
+    z-index: 0;
+}
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -180,9 +258,10 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #22c55e, #16a34a);
-    color: white;
-    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+    background: linear-gradient(45deg, #facc15, #ef4444, #3b82f6, #16a34a);
+    background-size: 200% 200%;
+    color: #222 !important;
+    border: none !important;
 }
 
 .btn-primary:hover {
@@ -551,6 +630,86 @@ section {
 .footer-logo i {
     margin-right: 0.5rem;
     color: #16a34a;
+}
+
+/* Milestones Section Styling */
+.milestones {
+    background: #f8fafc;
+    padding: 4rem 0;
+}
+.milestone-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.milestone-list li {
+    background: #fff;
+    border-left: 6px solid #16a34a;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    padding: 2rem 2rem 1rem 2.5rem;
+    box-shadow: 0 4px 24px rgba(22,163,74,0.07);
+    position: relative;
+    transition: box-shadow 0.2s;
+}
+.milestone-list li:hover {
+    box-shadow: 0 8px 32px rgba(22,163,74,0.15);
+}
+.milestone-list li strong {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.2 !important;
+}
+.milestone-badge {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    background: #16a34a;
+    border-radius: 12px;
+    padding: 0.2em 0.9em;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+.milestone-badge.inprogress {
+    background: #f59e42;
+}
+.milestone-icon {
+    font-size: 1.5rem;
+    color: #16a34a;
+    margin-right: 0.5rem;
+}
+.milestone-list ul {
+    margin: 0.7rem 0 0 0.5rem;
+    padding-left: 1.2rem;
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
+}
+.milestone-list ul li {
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0.2rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.3 !important;
+    margin-bottom: 0.1rem !important;
+}
+@media (max-width: 768px) {
+    .milestones {
+        padding: 2rem 0;
+    }
+    .milestone-list li {
+        padding: 1.2rem 1rem 0.7rem 1.2rem;
+    }
 }
 
 /* Responsive Design */

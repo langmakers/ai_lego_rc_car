@@ -76,21 +76,21 @@
             <h2 class="section-title">Project Overview</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Autonomous RC Car Implemented with AI Technology</h3>
+                    <h3>End-to-End Autonomous RC Car with Embedded LLM & ROS2</h3>
                     <p>
-                        This project is an autonomous RC car based on Raspberry Pi and Arduino.
-                        It recognizes the surrounding environment in real-time through computer vision technology,
-                        and determines the optimal driving path using deep learning models.
+                        This project aims to build a fully autonomous RC car platform using a combination of hardware and AI software. Starting with a Lego Defender 42110 chassis, we integrated servo and DC motors, controlled by Arduino Uno and Raspberry Pi 5. The system supports remote control via HTTP and I2C, and features a mobile app for voice-based control using Whisper and LLM APIs. The latest milestone introduces ROS2 and LiDAR for SLAM-based autonomous navigation. All control and collaboration are managed via email communication.
                     </p>
                     <div class="tech-stack">
                         <h4>Technologies Used</h4>
                         <div class="tech-items">
-                            <span class="tech-item">Python</span>
-                            <span class="tech-item">OpenCV</span>
-                            <span class="tech-item">TensorFlow</span>
-                            <span class="tech-item">Raspberry Pi</span>
-                            <span class="tech-item">Arduino</span>
-                            <span class="tech-item">ROS</span>
+                            <span class="tech-item">Lego Defender 42110</span>
+                            <span class="tech-item">Arduino Uno</span>
+                            <span class="tech-item">Raspberry Pi 5</span>
+                            <span class="tech-item">Servo/DC Motor</span>
+                            <span class="tech-item">Whisper</span>
+                            <span class="tech-item">LLM API</span>
+                            <span class="tech-item">ROS2</span>
+                            <span class="tech-item">LiDAR</span>
                         </div>
                     </div>
                 </div>
@@ -101,6 +101,60 @@
         </div>
     </section>
 
+    <!-- Milestones Section -->
+    <section id="milestones" class="milestones">
+        <div class="container">
+            <h2 class="section-title">Project Milestones</h2>
+            <ol class="milestone-list">
+                <li>
+                    <strong>
+                        <span class="milestone-icon"><i class="fas fa-car"></i></span>
+                        RC Car Preparation
+                        <span class="milestone-badge">Done</span>
+                    </strong>
+                    <ul>
+                        <li>Installed motors on Lego Defender 42110</li>
+                        <li>Checked servo/DC motor control methods</li>
+                        <li>Tested motor control with Arduino Uno</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>
+                        <span class="milestone-icon"><i class="fas fa-satellite-dish"></i></span>
+                        Remote Control
+                        <span class="milestone-badge">Done</span>
+                    </strong>
+                    <ul>
+                        <li>Controlled Arduino (Uno) motors via I2C from Raspberry Pi (RPI5)</li>
+                        <li>Integrated motor control via HTTP protocol on Raspberry Pi</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>
+                        <span class="milestone-icon"><i class="fas fa-mobile-alt"></i></span>
+                        Mobile Control App
+                        <span class="milestone-badge">Done</span>
+                    </strong>
+                    <ul>
+                        <li>STT using Whisper-based microphone signal</li>
+                        <li>Built remote MCP Server on Raspberry Pi</li>
+                        <li>Converted voice commands to control signals via LLM API</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>
+                        <span class="milestone-icon"><i class="fas fa-robot"></i></span>
+                        ROS2 Adoption
+                        <span class="milestone-badge inprogress">In Progress</span>
+                    </strong>
+                    <ul>
+                        <li>SLAM with LiDAR sensor</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
@@ -108,45 +162,31 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>Computer Vision</h3>
-                    <p>Recognizes the surrounding environment in real-time through cameras and detects obstacles.</p>
+                    <h3>Precise Motor Control</h3>
+                    <p>Servo and DC motors are precisely controlled via Arduino Uno and Raspberry Pi, enabling accurate steering and driving.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-wifi"></i>
                     </div>
-                    <h3>Machine Learning</h3>
-                    <p>Learns and determines optimal driving paths using deep learning models.</p>
+                    <h3>Remote & Mobile Control</h3>
+                    <p>Supports remote operation through HTTP and I2C, and mobile app-based control for flexible driving experiences.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-route"></i>
+                        <i class="fas fa-microphone"></i>
                     </div>
-                    <h3>Path Planning</h3>
-                    <p>Generates maps and plans efficient routes through SLAM algorithms.</p>
+                    <h3>Voice Command Integration</h3>
+                    <p>Whisper and LLM APIs convert voice commands into real-time control signals for hands-free operation.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3>Safety System</h3>
-                    <p>Ensures safe driving with emergency stop functions and collision prevention systems.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Remote Control</h3>
-                    <p>Control and monitor the RC car remotely through smartphone apps.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Real-time Monitoring</h3>
-                    <p>Collects and analyzes driving data and sensor information in real-time.</p>
+                    <h3>Autonomous Navigation (SLAM)</h3>
+                    <p>ROS2 and LiDAR enable SLAM-based mapping and autonomous driving capabilities.</p>
                 </div>
             </div>
         </div>
