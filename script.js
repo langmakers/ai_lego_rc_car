@@ -76,12 +76,11 @@ if (contactForm) {
         
         // Get form data
         const formData = new FormData(contactForm);
-        const name = contactForm.querySelector('input[type="text"]').value;
         const email = contactForm.querySelector('input[type="email"]').value;
         const message = contactForm.querySelector('textarea').value;
         
         // Simple validation
-        if (!name || !email || !message) {
+        if (!email || !message) {
             showNotification('Please fill in all fields.', 'error');
             return;
         }
