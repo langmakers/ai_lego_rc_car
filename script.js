@@ -69,32 +69,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Form submission handling
-const contactForm = document.querySelector('.contact-form form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+// const contactForm = document.querySelector('.contact-form form');
+// if (contactForm) {
+//     contactForm.addEventListener('submit', (e) => {
+//         e.preventDefault();
         
-        // Get form data
-        const formData = new FormData(contactForm);
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const message = contactForm.querySelector('textarea').value;
+//         // Get form data
+//         const formData = new FormData(contactForm);
+//         const email = contactForm.querySelector('input[type="email"]').value;
+//         const message = contactForm.querySelector('textarea').value;
         
-        // Simple validation
-        if (!email || !message) {
-            showNotification('Please fill in all fields.', 'error');
-            return;
-        }
+//         // Simple validation
+//         if (!email || !message) {
+//             showNotification('Please fill in all fields.', 'error');
+//             return;
+//         }
         
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address.', 'error');
-            return;
-        }
+//         if (!isValidEmail(email)) {
+//             showNotification('Please enter a valid email address.', 'error');
+//             return;
+//         }
         
-        // Simulate form submission
-        showNotification('Message sent successfully!', 'success');
-        contactForm.reset();
-    });
-}
+//         // Simulate form submission
+//         showNotification('Message sent successfully!', 'success');
+//         contactForm.reset();
+//     });
+// }
 
 // Email validation
 function isValidEmail(email) {
